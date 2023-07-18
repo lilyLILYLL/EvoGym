@@ -1,11 +1,9 @@
-import React from "react";
 import Logo from "../assets/Logo.png";
-type Props = {};
 
-export const Footer = (props: Props) => {
+export const Footer = () => {
   return (
     <div className="w-full bg-primary-100">
-      <div className="justify-between w-5/6 gap-10 py-10 mx-auto md:flex md:flex-row">
+      <div className="justify-between w-5/6 py-10 mx-auto md:gap-10 md:flex md:flex-row">
         <div className="flex flex-col justify-between gap-4 md:basis-2/5">
           <img alt="Logo" src={Logo} className="w-24 h-6" />
           <p className="text-sm">

@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Pages } from "../contants/constants";
 import { useAppDispatch } from "../hooks/reduxHooks";
@@ -7,9 +6,7 @@ import { HText } from "../components/HText";
 import { Class, ClassType } from "../components/Class";
 import { classes } from "../contants/constants";
 
-type Props = {};
-
-export const OurClassesPage = (props: Props) => {
+export const OurClassesPage = () => {
   const dispatch = useAppDispatch();
   return (
     <section

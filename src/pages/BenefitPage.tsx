@@ -1,4 +1,3 @@
-import React from "react";
 import AbstractWaves from "../assets/AbstractWaves.png";
 import BenefitsPageGraphic from "../assets/BenefitsPageGraphic.png";
 import Sparkles from "../assets/Sparkles.png";
@@ -12,9 +11,7 @@ import { motion } from "framer-motion";
 import { useAppDispatch } from "../hooks/reduxHooks";
 import { setSelectedPage } from "../store";
 
-type Props = {};
-
-export const BenefitPage = (props: Props) => {
+export const BenefitPage = () => {
   const dispatch = useAppDispatch();
   return (
     <section

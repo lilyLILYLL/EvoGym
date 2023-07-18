@@ -1,17 +1,12 @@
-import React from "react";
 import { Pages } from "../contants/constants";
 import { useAppDispatch } from "../hooks/reduxHooks";
 import { setSelectedPage } from "../store";
 import { motion } from "framer-motion";
 import { HText } from "../components/HText";
 import ContactUsPageGraphic from "../assets/ContactUsPageGraphic.png";
-import { ActionButton } from "../components/ActionButton";
 import EvolveText from "../assets/EvolveText.png";
-import { Footer } from "../components/Footer";
 
-type Props = {};
-
-export const ContactUsPage = (props: Props) => {
+export const ContactUsPage = () => {
   const dispatch = useAppDispatch();
   return (
     <section id={Pages.CONTACT_US} className="w-full mt-32 h-fit">
@@ -44,9 +39,11 @@ export const ContactUsPage = (props: Props) => {
               placeholder="MESSAGE"
               className="w-full py-2 pl-4 text-white rounded-lg bg-primary-300 placeholder:text-white h-[100px]"
             />
-            <div className="py-10">
-              <ActionButton label="SUMBIT" />
-            </div>
+            <input
+              type="submit"
+              value={"SUBMIT"}
+              className="inline px-8 py-3 my-4 rounded-lg cursor-pointer w-fit h-fit bg-secondary-500 hover: hover:bg-primary-500 hover:text-white"
+            />
           </div>
           <div className="relative md:w-1/2">
             <img

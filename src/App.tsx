@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { NavBar } from "./components/NavBar";
 import { HomePage } from "./pages/HomePage";
 import { BenefitPage } from "./pages/BenefitPage";
 import { OurClassesPage } from "./pages/OurClassesPage";
 import { ContactUsPage } from "./pages/ContactUsPage";
 import { Footer } from "./components/Footer";
+import { useAppSelector } from "./hooks/reduxHooks";
 function App() {
   const [isTopOfPage, setIsTopOfPage] = useState(true);
+  const state = useAppSelector((state) => state.navigation.selectedPage);
+  console.log(state);
 
   useEffect(() => {
     // if scrollY===0 => isTOpOfPage is true, otherwise false

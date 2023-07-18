@@ -5,6 +5,8 @@ import { useMediaQuery } from "../hooks/useMediaQuery";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import { SideBar } from "./SideBar";
 import { ActionButton } from "./ActionButton";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Pages } from "../contants/constants";
 
 type Props = {
   isTopOfPage: boolean;
@@ -24,7 +26,9 @@ export const NavBar = ({ isTopOfPage }: Props) => {
       <div className={`${flexBox} mx-auto  w-5/6 py-3 gap-16`}>
         {/* Left side: logo */}
         <div className={`${flexBox}`}>
-          <img alt="Logo" src={Logo} />
+          <AnchorLink href={`#${Pages.HOME}`}>
+            <img alt="Logo" src={Logo} />
+          </AnchorLink>
         </div>
 
         {/* right side: links, signin, become a memeber buttons */}

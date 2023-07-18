@@ -10,15 +10,11 @@ import { LearnMoreButton } from "../components/LearnMoreButton";
 import { motion } from "framer-motion";
 import { useAppDispatch } from "../hooks/reduxHooks";
 import { setSelectedPage } from "../store";
-type Props = {};
 
-export const HomePage = (props: Props) => {
+export const HomePage = () => {
   const dispatch = useAppDispatch();
   return (
-    <section
-      id={Pages.HOME}
-      className="flex flex-col border-2 border-blue-600 border-solid md:h-full"
-    >
+    <section id={Pages.HOME} className="flex flex-col md:h-full">
       <motion.div
         onViewportEnter={() => dispatch(setSelectedPage(Pages.HOME))}
         className="flex flex-col h-full mt-32 "

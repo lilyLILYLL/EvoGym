@@ -1,4 +1,3 @@
-import React from "react";
 import { LearnMoreButton } from "./LearnMoreButton";
 export interface BenefitType {
   icon: JSX.Element;
