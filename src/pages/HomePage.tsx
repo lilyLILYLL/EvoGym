@@ -44,9 +44,21 @@ export const HomePage = () => {
         {/* sponsors */}
         <div className="flex items-center bg-primary-100 md:basis-1/5">
           <div className="flex flex-row items-center w-5/6 gap-20 py-6 mx-auto">
-            <img alt="forbes" src={SponsorRedbull} className="h-10 w-15" />
-            <img alt="forbes" src={SponsorForbes} className="h-7 w-15" />
-            <img alt="forbes" src={SponsorFortune} className="h-7 w-15" />
+            <img
+              alt="forbes"
+              src={SponsorRedbull}
+              className="sm:h-10 sm:w-20  w-12 h-6"
+            />
+            <img
+              alt="forbes"
+              src={SponsorForbes}
+              className="sm:h-7 sm:w-20 w-12 h-4"
+            />
+            <img
+              alt="forbes"
+              src={SponsorFortune}
+              className="sm:h-7 sm:w-20 w-12 h-4"
+            />
           </div>
         </div>
       </motion.div>

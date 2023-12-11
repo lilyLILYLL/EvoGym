@@ -1,14 +1,19 @@
 import { TextField } from "./TextField";
 import { Formik } from "formik";
 import { ValidateContactForm } from "../shared/validation";
+import { ToastNotification } from "./ToastNotification";
+import React from "react";
 
 export const ContactForm = () => {
+  const [isNotificationOpen, setIsNotoficationOpen] = React.useState(false);
+  console.log(isNotificationOpen);
   return (
-    <div className="flex flex-col  md:w-1/2 gap-6">
+    <div className="flex flex-col  md:w-1/2 gap-6 ">
       <Formik
         initialValues={{ name: "", email: "", message: "" }}
         validationSchema={ValidateContactForm}
         onSubmit={(values, { resetForm }) => {
+          setIsNotoficationOpen((prev) => !prev);
           resetForm();
         }}
       >
@@ -50,6 +55,10 @@ export const ContactForm = () => {
           </>
         )}
       </Formik>
+      <ToastNotification
+        isShown={isNotificationOpen}
+        setIsShown={() => setIsNotoficationOpen((prev) => !prev)}
+      />
     </div>
   );
 };

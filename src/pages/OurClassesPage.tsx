@@ -11,7 +11,7 @@ export const OurClassesPage = () => {
   return (
     <section
       id={Pages.OUR_CLASSES}
-      className="pt-20 h-fit mt-30 bg-primary-100 pb-28"
+      className=" h-fit pt-36 bg-primary-100 pb-28"
     >
       <motion.div
         onViewportEnter={() => dispatch(setSelectedPage(Pages.OUR_CLASSES))}
@@ -28,7 +28,7 @@ export const OurClassesPage = () => {
           tortor massa, gravida sit amet rutrum sit amet, mollis non turpis.
         </p>
       </motion.div>
-      <div className="flex flex-row gap-10 mx-auto mt-16 ml-5 overflow-auto">
+      <div className="flex flex-row gap-10 mx-auto mt-16 ml-5 overflow-auto ">
         {classes.map((element: ClassType, index) => {
           return (
             <Class
