@@ -4,15 +4,17 @@ import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
 import { setSelectedPage } from "../store";
 type Props = {
   pageName: string;
+  onClick?: (e?: any) => void;
 };
 
-export const Link = ({ pageName }: Props) => {
+export const Link = ({ pageName, onClick }: Props) => {
   const pageInLowerCase = pageName.toLowerCase() as Pages;
   const selectedPage = useAppSelector((state) => state.navigation.selectedPage);
   const dispatch = useAppDispatch();
   const selected = selectedPage === pageInLowerCase ? "text-primary-500 " : "";
   const handleOnClick = () => {
     dispatch(setSelectedPage(pageInLowerCase));
+    if (onClick) onClick();
   };
 
   return (

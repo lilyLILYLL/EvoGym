@@ -14,10 +14,16 @@ type Props = {
 
 export const NavBar = ({ isTopOfPage }: Props) => {
   const isAboveMidumScreen = useMediaQuery();
-  const [isSideBarToggle, setIsSideBarToggle] = useState(false);
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
+  // custom styles
   const flexBox = "flex items-center justify-between";
   const navBarBackGround = isTopOfPage ? "" : "bg-primary-100";
+
+  //Handle Toggle SideBar
+  const handleTogglingSideBar = () => {
+    setIsSideBarOpen((prev) => !prev);
+  };
 
   return (
     <div
@@ -51,16 +57,15 @@ export const NavBar = ({ isTopOfPage }: Props) => {
         ) : (
           <div
             className="p-2 rounded-full bg-secondary-500 hover:cursor-pointer hover:bg-primary-300"
-            onClick={() => setIsSideBarToggle(!isSideBarToggle)}
+            onClick={handleTogglingSideBar}
           >
             <Bars3Icon className="w-6 h-6 text-white" />
           </div>
         )}
 
         {/* isNotAboveMediumScreen && isSideBarToggle => dipslay a side bar */}
-        {!isAboveMidumScreen && isSideBarToggle && (
-          <SideBar toggle={() => setIsSideBarToggle(!isSideBarToggle)} />
-        )}
+
+        <SideBar isOpen={isSideBarOpen} toggleSideBar={handleTogglingSideBar} />
       </div>
     </div>
   );
