@@ -11,7 +11,8 @@ export const Link = ({ pageName, onClick }: Props) => {
   const pageInLowerCase = pageName.toLowerCase() as Pages;
   const selectedPage = useAppSelector((state) => state.navigation.selectedPage);
   const dispatch = useAppDispatch();
-  const selected = selectedPage === pageInLowerCase ? "text-primary-500 " : "";
+
+  // Handle onCLick
   const handleOnClick = () => {
     dispatch(setSelectedPage(pageInLowerCase));
     if (onClick) onClick();
@@ -19,7 +20,9 @@ export const Link = ({ pageName, onClick }: Props) => {
 
   return (
     <div
-      className={`${selected} transition duration-100 hover:text-primary-500 `}
+      className={`${
+        selectedPage === pageInLowerCase ? "text-primary-500 " : ""
+      } transition duration-100 hover:text-primary-500 `}
       onClick={handleOnClick}
     >
       <AnchorLink href={`#${pageInLowerCase}`}>{pageName}</AnchorLink>
